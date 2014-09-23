@@ -11,20 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810080832) do
+ActiveRecord::Schema.define(version: 20140923131205) do
 
   create_table "productions", force: true do |t|
-    t.string   "name",       limit: 60,  default: "UNKNOWN", null: false
-    t.string   "pcode",      limit: 30,  default: "PD8888"
-    t.string   "pspec",      limit: 50,  default: "1.6X9"
-    t.string   "punit",      limit: 10
-    t.string   "psize",      limit: 50
+    t.string   "name",           limit: 60,  default: "UNKNOWN", null: false
+    t.string   "pcode",          limit: 30,  default: "PD8888"
+    t.string   "pspec",          limit: 50,  default: "1.6X9"
+    t.string   "punit",          limit: 10
+    t.string   "psize",          limit: 50
     t.string   "pimageurl"
     t.integer  "pweight"
     t.integer  "pvisittime"
-    t.text     "pdes",       limit: 200
+    t.text     "pdes",           limit: 200
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
+    t.integer  "amount"
+    t.integer  "at_lest_amount"
   end
 
 end
