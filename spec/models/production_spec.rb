@@ -7,13 +7,13 @@ describe Production do
   
   describe ".active?" do
     it "should return true if status is ACTIVE" do
-	  @product.status == "ACTIVE"
-	  @product.active?.should be_true
+	  @product.status = 'ACTIVE'
+	  @product.active?.should be_truthy
 	end
 	
 	it "should return false if status is not ACTIVE" do
-	  @product.status = "INACTIVE"
-	  @product.active?.should be_false
+	  @product.status = 'INACTIVE'
+	  @product.active?.should be_falsey
 	end
   end
 end
