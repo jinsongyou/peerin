@@ -17,6 +17,7 @@
 # interger amount atlest_amount
 
 class Production < ActiveRecord::Base
+  has_many :plan
   validates_presence_of :name
   
   scope :published, -> { where(status: 'ACTIVE') }

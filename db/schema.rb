@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923131205) do
+ActiveRecord::Schema.define(version: 20141007002206) do
+
+  create_table "plans", force: true do |t|
+    t.string   "seqnum"
+    t.datetime "expect_date"
+    t.integer  "require_num"
+    t.integer  "production_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "plans", ["production_id"], name: "index_plans_on_production_id"
 
   create_table "productions", force: true do |t|
     t.string   "name",           limit: 60,  default: "UNKNOWN", null: false
